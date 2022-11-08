@@ -1,0 +1,88 @@
+<head>  
+    <meta charset="utf-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    </head>
+<body>   
+
+    <div class="card main-card" >
+        <!-- Γενικές Πληροφορίες -->
+        <div *ngIf="current_page == 1">
+            <div class="card-body">
+                <h1 class="card-title game-title">Κανόνες</h1>
+                <h4 class="text-center">Γενικές Πληροφορίες</h4>
+                <div class="game-text">
+                    <h5> 1. Το παιχνίδι παίζεται από δύο ομάδες. Κάθε ομάδα έχει έναν αρχηγό που ορίζεται στην αρχή του παιχνιδιού. </h5>
+                    <h5> 2. Υπάρχουν 25 κάρτες, οι οποίες περιέχουν μια λέξη και έχουν ένα συγκεκριμένο χρώμα. Τα χρώματα είναι μπλε, κόκκινο, κίτρινο και μαύρο. 
+                        Η μια ομάδα έχει τις κόκκινες κάρτες και η άλλη τις μπλε. 
+                        Οι κίτρινες κάρτες είναι ουδέτερες και η μαύρη είναι τερματισμός. 
+                    </h5>
+                    <h5> 3. Το χρώμα καθεμίας από τις 25 κάρτες λέξεων ορίζεται στην αρχή του παιχνιδιού από μια τυχαία κάρτα χρωμάτων. </h5>
+                    <div>
+                        <img class="card-example" src="../../assets/cardexample.png" width="100%" height="70%">
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <span class="btn btn-outline-dark" style="margin-right:1%;" routerLink="/">Αρχική</span>
+                    <span class="btn btn-dark" style="margin-right:1%;" (click)="change_first()">1</span>
+                    <span class="btn btn-outline-dark" style="margin-right:1%;" (click)="change_second()">2</span>
+                    <span class="btn btn-outline-dark" (click)="change_third()">3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Τρόπος παιχνιδιού -->
+        <div *ngIf="current_page == 2">
+            <div class="card-body">
+                <h1 class="card-title game-title">Κανόνες</h1>
+                <h4 class="text-center">Τρόπος παιχνιδιού</h4>
+                <div class="game-text">
+                    <h5> 1. Όλοι οι παίκτες παρατηρούν προσεκτικά το ταμπλό λέξεων. Οι αρχηγοί βλέπουν και την κάρτα χρωμάτων ώστε να ξέρουν ποιές κάρτες ανήκουν σε ποιές κατηγορίες. </h5>
+                    <h5> 2. Η ομάδα που ξεκινάει αναγράφεται στην αρχή του παιχνιδιού. </h5>
+                    <h5> 3. Ο αρχηγός δίνει στην ομάδα του μια λέξη και έναν αριθμό. 
+                        Ο αριθμός περιγράφει το πλήθος τον καρτών που ταιριάζουν εννοιολογικά με την λέξη που έδωσε. 
+                        Η λέξη που δίνει προσπαθεί να περιγράψει όσο το δυνατόν καλύτερα τις κάρτες που έχει προσπαθήσει να περιγράψει.
+                    </h5>
+                    <h5> 4. Οι υπόλοιποι παίκτες της ομάδες προσπαθούν να βρουν ποιές κάρτες ήθελε να περιγράψει ο αρχηγός έχοντας όσες προσπάθειες όσες ο αριθμός που έδωσε ο αρχηγός. </h5>
+                    <h5> 5. α) Αν επιλέξουν κάρτα που ανήκει στην ομάδα τότε αναποδογυρίζεται η κάρτα και συνεχίζουν τις προσπάθειες μέχρι να φτάσουν τον αριθμό του αρχηγού. </h5>
+                    <h5> &emsp; β) Αν επιλέξουν κάρτα που ανήκει στην  αντίπαλοι ομάδα τότε αναποδογυρίζεται η κάρτα και τελειώνει η σειρά. </h5>
+                    <h5> &emsp; γ) Αν επιλέξουν ουδέτερη κάρτα τότε αναποδογυρίζεται η κάρτα και τελειώνει η σειρά. </h5>
+                    <h5> &emsp; δ) Αν επιλέξουν την κάρτα τερματισμού τότε αναποδογυρίζεται η κάρτα τερματίζει το παιχνίδι με νικητή την αντίπαλη ομάδα. </h5>
+                    <h5> 6. Το παιχνίδι τελειώνει μόλις μια ομάδα αναποδογυρίσει όλες τις κάρτες της.</h5>
+                </div>
+                <div class="text-center mt-2">
+                    <span class="btn btn-outline-dark" style="margin-right:1%;" routerLink="/">Αρχική</span>
+                    <span class="btn btn-outline-dark" style="margin-right:1%;" (click)="change_first()">1</span>
+                    <span class="btn btn-dark" style="margin-right:1%;" (click)="change_second()">2</span>
+                    <span class="btn btn-outline-dark" (click)="change_third()">3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Παραδείγματα -->
+        <div *ngIf="current_page == 3">
+            <div class="card-body">
+                <h1 class="card-title game-title">Κανόνες</h1>
+                <h4 class="text-center">Παραδείγματα</h4>
+                <div class="game-text">
+                    <h5> 1. Ο αρχηγός της κόκκινης ομάδας λέει "θάλασσα 2" στην ομάδα του.</h5>
+                    <h5> Οι συμπαίκτες βρίσkουν τις λέξεις πλοίο και καράβι που ανήκουν στην κόκκινη ομάδα</h5>
+                    <img class="card-example" src="../../assets/example1.png" width="100%" height="70%">
+                    <br>
+                    <h5> 2. Ο αρχηγός της κόκκινης ομάδας λέει "θάλασσα 2" στην ομάδα του.</h5>
+                    <h5> Οι συμπαίκτες παρατηρούν τις λέξεις πλοίο, καράβι και σκάφος αλλά δεν ξέρουν ποιες 2 από τις 3 ανήκουν στην ομάδα τους.</h5>
+                    <img class="card-example" src="../../assets/example2.png" width="100%" height="70%">
+                </div>
+
+                <div class="text-center mt-2">
+                    <span class="btn btn-outline-dark" style="margin-right:1%;" routerLink="/">Αρχική</span>
+                    <span class="btn btn-outline-dark" style="margin-right:1%;" (click)="change_first()">1</span>
+                    <span class="btn btn-outline-dark" style="margin-right:1%;" (click)="change_second()">2</span>
+                    <span class="btn btn-dark" (click)="change_third()">3</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+</body>

@@ -1,0 +1,62 @@
+<head>  
+    <meta charset="utf-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>   
+
+    <h5 class="game-title">Λέξη Αριθμός</h5>
+
+    <div class="card main-card text-center">
+            
+        <div class="grid-container grid-all-cards">
+            <div *ngFor="let card of cards" >
+                <div class="grid-item grid-card" *ngIf="card.turned == true" (click)="turnCard(card)">
+                    {{card.word}}
+                </div>
+                <div class="grid-item grid-card" *ngIf="card.turned == false" [style.background-color]="card.color" (click)="turnCard(card)">
+                    {{card.word}}
+                </div>
+            </div>
+        </div>
+            
+    </div>
+
+    <div class="float-container">
+        <div class="card grid-colors-card text-center" (click)="turnMainCard()">
+            
+            <div *ngIf="mainCardTurned == true">
+                <h1>Κάντε κλίκ για να κρύψετε την κάρτα χρωμάτων</h1>
+                <div class="grid-container">
+                    <div *ngFor="let card of cards" >
+                        <div class="grid-item" [style.background-color]="card.color">
+                            {{card.category}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="mainCardTurned == false">
+                <div class="grid-container">
+                    <h1>Κάντε κλίκ για να δείτε την κάρτα χρωμάτων</h1>
+                </div>
+            </div>        
+            
+        </div>
+        <div class="timer">
+
+            <h3>{{timeLeft}} Seconds Left....</h3>
+            <button class="btn btn-light" style="margin-right:1%" (click)='startTimer()'>Start Timer</button>
+            <button class="btn btn-light" style="margin-right:1%" (click)='pauseTimer()'>Pause</button>
+            <button class="btn btn-light" (click)='resetTimer()'>Reset</button>
+            <div class="mt-2">
+                <input type="text" style="margin-right:1%" id="newTimer" name="newTimer" #newTimer placeholder="Set at...">
+                <button class="btn btn-light" (click)='setTimer(newTimer.value);'>Set Timer</button>
+            </div>
+            
+
+        </div>
+    </div>
+        
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+</body>

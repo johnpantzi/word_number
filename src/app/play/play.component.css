@@ -1,0 +1,81 @@
+body {
+    background-color: rgb(193, 230, 255);
+    background-size: 100% 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    position:fixed;
+}
+
+.main-card{
+
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+
+}
+
+.game-title{
+    font-size: 70px;
+    font-family: "Comic Sans MS",ui-monospace, monospace;
+    font-weight: bold;
+
+    background: linear-gradient(
+    to right, 
+    rgb(225, 0, 255), 
+    hsl(204 100% 59%)
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 1%;
+}
+
+.grid-all-cards{
+    background-color: rgb(193, 230, 255);
+}
+
+.grid-item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 25px;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.grid-card{
+    background-color: rgb(255, 255, 255);
+}
+
+.grid-card:hover{
+    cursor: pointer;
+}
+
+.grid-colors-card{
+    float: left;
+    width: 40%;
+    margin-left: 20%;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+.grid-colors-card:hover{
+    cursor: pointer;
+}
+
+.timer{
+    padding-top: 2%;
+}

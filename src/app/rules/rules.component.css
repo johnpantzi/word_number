@@ -1,0 +1,58 @@
+body {
+    background-image: url('../../assets/lightblue.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    position:fixed;
+}
+
+.main-card{
+
+    background-color: #d2e4f7;
+    width: 30%;
+    margin-top: 2%;
+    margin-left: 35%;
+    margin-right: 35%;
+
+}
+
+.game-title{
+    font-size: 60px;
+    font-family: "Comic Sans MS",ui-monospace, monospace;
+    font-weight: bold;
+
+    background: linear-gradient(
+    to right, 
+    rgb(225, 0, 255), 
+    hsl(204 100% 59%)
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+
+}
+
+.game-text{
+    font-family: "Comic Sans MS",ui-monospace, monospace;
+    font-weight: bold;
+
+    background: linear-gradient(
+    to right, 
+    rgb(0, 17, 255), 
+    rgb(118, 22, 163)
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+
+}
+
+.card-example{
+}
